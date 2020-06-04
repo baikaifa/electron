@@ -6,13 +6,14 @@ var BrowserWindow = electron.BrowserWindow;  //创建窗口引用
 
 var mainWindow = null;  //声明要打开的主窗口
 app.on('ready', () => {
+  require('./main/menu.js')
   mainWindow = new BrowserWindow({
     width: 400, height: 400,
     webPreferences: { nodeIntegration: true }//node下所有内容可以在渲染进程中使用
   })
   //设置打开的窗口大小
 
-  mainWindow.loadFile('index.html')  //加载那个页面
+  mainWindow.loadFile('demo2.html')  //加载那个页面
 
   //监听关闭事件，把主窗口设置为null
   mainWindow.on('closed', () => {

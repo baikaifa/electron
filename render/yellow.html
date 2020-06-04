@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  yellow
+  <script>
+    const btn = this.document.querySelector('#btn')
+    const BrowserWindow = require('electron').remote.BrowserWindow
+
+    window.onload = function () {
+      btn.onclick = () => {
+
+        newWin = new BrowserWindow({
+          width: 500,
+          height: 500,
+        })
+        newWin.loadFile('yellow.html')
+        newWin.on('close', () => { win = null })
+
+      }
+    }
+  </script>
+</body>
+
+</html>
